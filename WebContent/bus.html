@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>公交运营系统--公交</title>
+		<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="js/bus.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" href="css/station.css" />
+	</head>
+	<body style="overflow: hidden;">
+		<div id="buswrap">
+			<div id="busName">
+				<img src="img/busIcon.jpg" alt="公交车" id="busIcon"/>
+				<div id="busInfo">
+					<h3>983路</h3>
+					<h4>东窑村</h4>
+					<img src="img/go.jpg" alt="前往" id="go"/>
+					<h4>王佐汽车站</h4>
+				</div>
+			</div>
+			<div id="busNum">
+				<div class="busNum" id="goNum">
+					<h5>前往:</h5>
+					<ul>
+						<li><img src="img/busBtn.jpg"/><p>京A·L9222</p></li>
+						<li><img src="img/busBtn.jpg"/><p>京A·L9222</p></li>
+						<li><img src="img/busBtn.jpg"/><p>京A·L9222</p></li>
+						<li><img src="img/busBtn.jpg"/><p>京A·L9222</p></li>
+						<li><img src="img/busBtn.jpg"/><p>京A·L9222</p></li>
+						<li><img src="img/busBtn.jpg"/><p>京A·L9222</p></li>
+					</ul>
+				</div>
+				<div class="busNum" id="backNum">
+					<h5>返回:</h5>
+					<ul>
+						<li><img src="img/busBtn.jpg"/><p>京A·L9222</p></li>
+						<li><img src="img/busBtn.jpg"/><p>京A·L9222</p></li>
+						<li><img src="img/busBtn.jpg"/><p>京A·L9222</p></li>
+						<li><img src="img/busBtn.jpg"/><p>京A·L9222</p></li>
+						<li><img src="img/busBtn.jpg"/><p>京A·L9222</p></li>
+						<li><img src="img/busBtn.jpg"/><p>京A·L9222</p></li>
+					</ul>
+				</div>
+			</div>
+			<div id="busGo">
+				<img src="img/busGo.jpg" alt="城市北京" id="busGoBack"/>
+				<ul id="BusBox">
+					<li>
+						<div>
+							<img src="img/goBus.png"/>
+						</div>
+						<div class="goBusInfo" id="carInfo">
+							<p>车号：京A888</p>
+							<p>司机：王大拿</p>
+							<p>乘务员：范冰冰</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="img/goBus.png"/>
+						</div>
+						<div class="goBusInfo" id="carInfo">
+							<p>车号：京A888</p>
+							<p>司机：王大拿</p>
+							<p>乘务员：范冰冰</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="img/goBus.png"/>
+						</div>
+						<div class="goBusInfo" id="carInfo">
+							<p>车号：京A888</p>
+							<p>司机：王大拿</p>
+							<p>乘务员：范冰冰</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="img/goBus.png"/>
+						</div>
+						<div class="goBusInfo" id="carInfo">
+							<p>车号：京A888</p>
+							<p>司机：王大拿</p>
+							<p>乘务员：范冰冰</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="img/goBus.png"/>
+						</div>
+						<div class="goBusInfo" id="carInfo">
+							<p>车号：京A888</p>
+							<p>司机：王大拿</p>
+							<p>乘务员：范冰冰</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="img/goBus.png"/>
+						</div>
+						<div class="goBusInfo" id="carInfo">
+							<p>车号：京A888</p>
+							<p>司机：王大拿</p>
+							<p>乘务员：范冰冰</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			
+			<div id="busLine">
+				<ul>
+					<li><img src="img/busLine.jpg"/></li>
+					<li><img src="img/busLine.jpg"/></li>
+					<li><img src="img/busLine.jpg"/></li>
+					<li><img src="img/busLine.jpg"/></li>
+					<li><img src="img/busLine.jpg"/></li>
+					<li><img src="img/busLine.jpg"/></li>
+					<li><img src="img/busLine.jpg"/></li>
+					<li><img src="img/busLine.jpg"/></li>
+					<li><img src="img/busLine.jpg"/></li>
+					<li><img src="img/busLine.jpg"/></li>
+					<li><img src="img/busLine.jpg"/></li>
+					<li><img src="img/busLine.jpg"/></li>
+					<li><img src="img/busLine.jpg"/></li>
+					<li><img src="img/busLine.jpg"/></li>
+					<li><img src="img/busLine.jpg"/></li>
+					<li><img src="img/busLine.jpg"/></li>
+					<li><img src="img/busLine.jpg"/></li>
+					<li><img src="img/busLine.jpg"/></li>
+					<li><img src="img/busLine.jpg"/></li>
+					<li><img src="img/busLine.jpg"/></li>
+				</ul>
+				<div id="line"></div>
+			</div>
+			
+			<div id="busBack">
+				
+				<ul id="BusBackBox">
+					<li>
+						<div>
+							<img src="img/backBus.png"/>
+						</div>
+						<div class="backBusInfo" id="carInfo">
+							<p>车号：京A888</p>
+							<p>司机：王大拿</p>
+							<p>乘务员：范冰冰</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="img/backBus.png"/>
+						</div>
+						<div class="backBusInfo" id="carInfo">
+							<p>车号：京A888</p>
+							<p>司机：王大拿</p>
+							<p>乘务员：范冰冰</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="img/backBus.png"/>
+						</div>
+						<div class="backBusInfo" id="carInfo">
+							<p>车号：京A888</p>
+							<p>司机：王大拿</p>
+							<p>乘务员：范冰冰</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="img/backBus.png"/>
+						</div>
+						<div class="backBusInfo" id="carInfo">
+							<p>车号：京A888</p>
+							<p>司机：王大拿</p>
+							<p>乘务员：范冰冰</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="img/backBus.png"/>
+						</div>
+						<div class="backBusInfo" id="carInfo">
+							<p>车号：京A888</p>
+							<p>司机：王大拿</p>
+							<p>乘务员：范冰冰</p>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="img/backBus.png"/>
+						</div>
+						<div class="backBusInfo" id="carInfo">
+							<p>车号：京A888</p>
+							<p>司机：王大拿</p>
+							<p>乘务员：范冰冰</p>
+						</div>
+					</li>
+				</ul>
+				
+				<ul id="BusBackName">
+					<li><p>东八间房</p></li>
+					<li><p>雍家村</p></li>
+					<li><p>北石家村</p></li>
+					<li><p>北岗子</p></li>
+					<li><p>北岗子东站</p></li>
+					<li><p>东坝西北门</p></li>
+					<li><p>南岗子</p></li>
+					<li><p>东坝家园东门</p></li>
+					<li><p>东坝中街</p></li>
+					<li><p>铁十六局</p></li>
+					<li><p>东坝</p></li>
+					<li><p>三岔河北站</p></li>
+					<li><p>东岗子</p></li>
+					<li><p>马厂</p></li>
+					<li><p>楼梓庄路口西</p></li>
+					<li><p>楼梓庄乡政府</p></li>
+					<li><p>曹各庄</p></li>
+					<li><p>皮村路口被</p></li>
+					<li><p>幸福家园</p></li>
+					<li><p>东窑村</p></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

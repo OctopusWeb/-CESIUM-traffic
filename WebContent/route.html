@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>公交运营系统</title>
+<script type="text/javascript" src="js/Cesium.js"></script>
+<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<style>
+	#btn1{position: absolute;left: 0;top: 0;}
+	#btn2{position: absolute;left: 100px;top: 0;}
+</style>
+
+<script type="text/javascript">
+	$(function(){
+		var viewer = new Cesium.Viewer('cesiumContainer',{
+		    timeline : true,//默认打开时间轴显示
+		    baseLayerPicker: false,//图层控制显示
+		    geocoder: false,//地名查找不显示
+		    timeline: true
+		});//加载地图
+	
+	    viewer.camera.flyTo({//视角移动
+	        destination : Cesium.Cartesian3.fromDegrees(116.39, 39.92, 65000)
+	    });
+	    $("#btn1").click(function(){
+	    	$(".cesium-animation-buttonPath").click();
+	    })
+	    $("#btn2").click(function(){
+	    		alert(11);
+	    	})
+	}) 
+</script>
+</head>
+<body>
+	<div id="map">
+		<div id="cesiumContainer" class="fullSize"></div>
+	</div>
+	<button id="btn1">hahahah1</button>
+	<button id="btn2">hahahah2</button>
+</body>
+</html>

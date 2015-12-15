@@ -1,0 +1,60 @@
+h1,h2,h3,h4,h5，h6,p,span{color:#c5e1ff;font-family: "微软雅黑";}
+body{background: #264363;}
+#wrap{width: 100%;height: 1080px;position: relative;}
+#wrap ul li{width: 50%;height: 188px;float: left;background: #264363;border-bottom: 1px #5f7c9a solid;position: relative;cursor: pointer}
+
+.stationNum{width: 250px;height: 188px;float: left;background: #13304e;}
+.stationNum h1{width:250px;text-align: center;font-size: 54px;line-height: 65px;margin-top: 36px;}
+.stationNum h2{width: 250px;text-align: center;font-size: 36px;line-height: 36px;}
+
+.stationInfo{width:auto;height: 188px;position: absolute;left: 250px;min-width: 430px;}
+.infoName{width: auto;height: 36px;float: left;margin: 36px 0 0 32px;}
+.infoName h3{font-size: 32px;float: left;width: auto;line-height: 32px;}
+.infoName img{float: left;width: 62px;height: 34px;margin: 0 20px;}
+.infoTime{width: auto;height: 16px;float: left;margin: 25px 0 0 32px;}
+.infoTime p{font-size: 15px;color: #ffac4c;float: left;}
+.infoTime span{font-size: 15px;color: #4ce4ff;float: left;margin-left: 40px;}
+.infoNum{width: 80%;float: left;margin: 21px 0 0 32px;}
+
+.stationRight{width: 6px;height: 188px;float: right;background: #16273c;}
+
+#buswrap{width: 1920px;height: 100%;position: absolute;}
+#busName{width: 100%;height: 90px;background: #ffac4c;float: left;}
+#busIcon{width: auto;height:60%;float: left;margin-left: 5%;margin-top: 1%;}
+#busInfo{width: 60%;float: left;margin-left: 26px;}
+#busName h3{color: #13304e;font-size: 24px;float: left;width: 100%;margin-top: 1%;}
+#busName h4{color: #13304E;font-size: 16px;float: left;}
+#go{width: auto;height: 10%;float: left;margin: 7px;}
+
+#busNum{width: 1920px;height: 70px;background: #012d5a;float: left;min-width: 1300px;}
+.busNum{height: 25px;width: 100%;float: left;}
+.busNum h5{color: #fff; font-size: 16px;float: left;width: auto;margin-left: 50px;margin-top: 10px;}
+.busNum ul{width: 80%;float: left;margin:12px}
+.busNum ul li{width:150px;float: left;cursor: pointer;}
+.busNum ul li img{width:15px;float: left;margin-top: 2px;}
+.busNum ul li p{float: left;margin-left: 10px;}
+
+#busGo{width: 1920px;height: 45%;float: left;position: relative;background: #264365;overflow: hidden;}
+#busGo ul{position: absolute;bottom: 0;width: 500000px;min-width: 1300px;left: 50px}
+#busGo ul li{float: left;margin-left: 200px;position: relative;width: 100px;}
+#busGo ul li:first-child{margin-left: 100px;}
+#busGoBack{width: 100%;height:auto;position: absolute;bottom: 0;}
+.goBusInfo{position: absolute;width: 123px;height: 83px;background: url(../img/goBusInfo.png);top: -100px;left: -20px;display: none;}
+.goBusInfo p{color: #fff;width: 123px;text-align: center;margin-top: 4px;}
+
+#busLine{width: 1920px;height: 40px;background: #264365;float: left;position: relative;}
+#busLine ul{position: absolute;width: 100%;z-index: 100;margin-top: 20px;}
+#busLine ul li{float: left;width: 40px;height: 40px;margin-left: 53px;}
+#busLine ul li img{float: left;width: 40px;height: 40px;}
+#line{width: 94%;height: 6px;background: #fff;position: absolute;margin-left: 3%;margin-top: 37px;}
+
+#busBack{width: 1920px;height: 44%;background: #264365;float: left;position: relative;}
+#BusBackBox{width: 2920px;position: absolute;top: 60px;right: 0;}
+#BusBackBox li{float: right;margin-right: 200px;position: relative;width: 100px;}
+#BusBackBox li:first-child{margin-right: 100px;}
+#BusBackName{width: 100%;float: left;height: 180px;margin-top: 140px;}
+#BusBackName li{float: left;width: 40px;height: 40px;margin-left: 53px;}
+#BusBackName li p{float: left;width: 14px;font-size: 14px;color: #fff;line-height: 14px;text-align: center;margin-left: 10px;}
+.backBusInfo{position: absolute;width: 123px;height: 83px;background: url(../img/backBusInfo.png);top: -100px;left: 10px;z-index: 1000;display: none;}
+.backBusInfo p{color: #fff;width: 123px;text-align: center;margin-top: 4px;}
+
