@@ -8,18 +8,32 @@
 		<link rel="stylesheet" type="text/css" href="css/station.css"/>
 		<script type="text/javascript">
 		window.onload=function(){
-			var Num=988;
-			var startName="东窑村";
-			var stopName="王佐汽车站";
 			var startTime="5：30";
-			var stopTime="20：00";
-			var many=51;
+			var stopTime="22：00";
 			var str="";
-			for(i=0;i<20;i++){
+			
+			for(var i=1;i<=10;i++){
+				i<10?i="0"+i:i=i;
+				var point_url = "data/point"+i+".txt";
+				$.getJSON(point_url,function(data){
+					var Num = data[0].id;
+					var startName = data[0].name;
+					var stopName=data[data.length-1].name;
+					var many = data.length;
+					addContent(Num,startName,stopName,many);
+					document.getElementById("stationUl").innerHTML=str;
+					$(".stationNum h1").each(function(){
+						$(this).height()>65?$(this).css({"font-size":"30px"}):$(this).css({"font-size":"40px"});
+					})
+					addEvent();
+				})
+			}
+
+			function addContent(Num,startName,stopName,many){
 				str+="<li>";
 				str+="<div class='stationNum'>";
 				str+="<h1>"+Num+"</h1>";
-				str+="<h2>路</h2>";
+				str+="<h2></h2>";
 				str+="</div>";
 				str+="<div class='stationInfo'>";
 				str+="<div class='infoName'>";
@@ -37,14 +51,17 @@
 				str+="</div>";
 				str+="<div class='stationRight'></div>";
 				str+="</li>";	
+			}	
+			
+			function addEvent(){
+				$("#stationUl li").click(function(){
+					$(".stationNum").css({"background":"#13304e"});
+					$("h1,h2").css({"color":"#c5e1ff"});
+					$(this).find(".stationNum").css({"background":"#016ff2"});
+					$(this).find("h1,h2").css({"color":"#fff"});
+				})
 			}
-			document.getElementById("stationUl").innerHTML=str;
-			$("#stationUl li").click(function(){
-				$(".stationNum").css({"background":"#13304e"});
-				$("h1,h2").css({"color":"#c5e1ff"});
-				$(this).find(".stationNum").css({"background":"#016ff2"});
-				$(this).find("h1,h2").css({"color":"#fff"});
-			})
+			
 		}
 			
 		</script>

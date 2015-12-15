@@ -4,14 +4,13 @@ body{background: #264363;}
 #wrap ul li{width: 50%;height: 188px;float: left;background: #264363;border-bottom: 1px #5f7c9a solid;position: relative;cursor: pointer}
 
 .stationNum{width: 250px;height: 188px;float: left;background: #13304e;}
-.stationNum h1{width:250px;text-align: center;font-size: 54px;line-height: 65px;margin-top: 36px;}
-.stationNum h2{width: 250px;text-align: center;font-size: 36px;line-height: 36px;}
+.stationNum h1{width:250px;text-align: center;font-size: 54px;line-height: 65px;margin-top: 60px;}
 
 .stationInfo{width:auto;height: 188px;position: absolute;left: 250px;min-width: 430px;}
 .infoName{width: auto;height: 36px;float: left;margin: 36px 0 0 32px;}
 .infoName h3{font-size: 32px;float: left;width: auto;line-height: 32px;}
 .infoName img{float: left;width: 62px;height: 34px;margin: 0 20px;}
-.infoTime{width: auto;height: 16px;float: left;margin: 25px 0 0 32px;}
+.infoTime{width: 500px;height: 16px;float: left;margin: 25px 0 0 32px;}
 .infoTime p{font-size: 15px;color: #ffac4c;float: left;}
 .infoTime span{font-size: 15px;color: #4ce4ff;float: left;margin-left: 40px;}
 .infoNum{width: 80%;float: left;margin: 21px 0 0 32px;}
@@ -43,17 +42,17 @@ body{background: #264363;}
 .goBusInfo p{color: #fff;width: 123px;text-align: center;margin-top: 4px;}
 
 #busLine{width: 1920px;height: 40px;background: #264365;float: left;position: relative;}
-#busLine ul{position: absolute;width: 100%;z-index: 100;margin-top: 20px;}
-#busLine ul li{float: left;width: 40px;height: 40px;margin-left: 53px;}
+#busLine ul{position: absolute;width: 1920px;z-index: 100;margin-top: 20px;}
+#busLine ul li{float: left;width: 40px;height: 40px;}
 #busLine ul li img{float: left;width: 40px;height: 40px;}
-#line{width: 94%;height: 6px;background: #fff;position: absolute;margin-left: 3%;margin-top: 37px;}
+#line{width: 1800px;height: 6px;background: #fff;position: absolute;margin-left: 53px;margin-top: 37px;}
 
 #busBack{width: 1920px;height: 44%;background: #264365;float: left;position: relative;}
 #BusBackBox{width: 2920px;position: absolute;top: 60px;right: 0;}
 #BusBackBox li{float: right;margin-right: 200px;position: relative;width: 100px;}
 #BusBackBox li:first-child{margin-right: 100px;}
-#BusBackName{width: 100%;float: left;height: 180px;margin-top: 140px;}
-#BusBackName li{float: left;width: 40px;height: 40px;margin-left: 53px;}
+#BusBackName{width: 1920px;float: left;height: 180px;margin-top: 140px;}
+#BusBackName li{float: left;width: 40px;height: 40px;}
 #BusBackName li p{float: left;width: 14px;font-size: 14px;color: #fff;line-height: 14px;text-align: center;margin-left: 10px;}
 .backBusInfo{position: absolute;width: 123px;height: 83px;background: url(../img/backBusInfo.png);top: -100px;left: 10px;z-index: 1000;display: none;}
 .backBusInfo p{color: #fff;width: 123px;text-align: center;margin-top: 4px;}
