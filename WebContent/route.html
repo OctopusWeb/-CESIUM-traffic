@@ -7,36 +7,109 @@
 <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
 <style>
-	#btn1{position: absolute;left: 0;top: 0;}
-	#btn2{position: absolute;left: 100px;top: 0;}
 </style>
 
 <script type="text/javascript">
-	$(function(){
+$(function(){
+	
+	initEvent();
+	function initEvent(){
 		var viewer = new Cesium.Viewer('cesiumContainer',{
 		    timeline : true,//默认打开时间轴显示
 		    baseLayerPicker: false,//图层控制显示
 		    geocoder: false,//地名查找不显示
 		    timeline: true
 		});//加载地图
-	
-	    viewer.camera.flyTo({//视角移动
+		cameraTo(viewer);
+		Path("05",viewer,100);
+
+		
+		drawPoint("05",viewer);
+
+	}
+	function cameraTo(viewer){
+		viewer.camera.flyTo({//视角移动
 	        destination : Cesium.Cartesian3.fromDegrees(116.39, 39.92, 65000)
 	    });
-	    $("#btn1").click(function(){
-	    	$(".cesium-animation-buttonPath").click();
-	    })
-	    $("#btn2").click(function(){
-	    		alert(11);
-	    	})
-	}) 
+	}	
+	
+	function drawPoint(num,viewer){
+		var pointUrl = "data/point"+num+".txt"
+		$.getJSON(pointUrl,function(data){
+			for (var i=0;i<data.length;i++) {
+				var name = data[i].name;
+				var x = data[i].location.lng;
+				var y = data[i].location.lat;
+				point(x,y,name,viewer);
+			}	
+		})
+	}
+	function point(x,y,name,viewer){
+	    viewer.entities.add({
+	        position : Cesium.Cartesian3.fromDegrees(x,y),
+	        name : name,
+	        point : {
+	            pixelSize : 2,
+	            color : Cesium.Color.YELLOW,
+	            outlineWidth : 0.5,
+	            scaleByDistance : new Cesium.NearFarScalar(1.5e2, 2.0, 1.5e7, 0.5)
+	            }
+	    });            
+	}
+	function Path(num,viewer,time){
+		var start = Cesium.JulianDate.fromDate(new Date(2015, 12, 16, 16));//设置开始时间
+	    var stop = Cesium.JulianDate.addSeconds(start, 600, new Cesium.JulianDate());//设置结束时间
+	    viewer.clock.startTime = Cesium.JulianDate.addSeconds(start, time, new Cesium.JulianDate());
+	    viewer.clock.stopTime = stop.clone();
+	    viewer.clock.currentTime = start.clone();
+	    viewer.clock.clockRange = Cesium.ClockRange.LOOP_STOP; //时间结束时重回开始时间
+	    viewer.clock.multiplier = 1;//时间推进速度
+	    drawPath(num);
+		function drawPath(num){
+			var pathtUrl = "data/path"+num+".txt"
+			var myPosition = [];
+			var myTime = [];
+			$.getJSON(pathtUrl,function(data){
+				for(var i=0;i<data.length;i++){
+					myPosition[i] = Cesium.Cartesian3.fromDegrees(data[i].lng, data[i].lat);
+					myTime[i] = Cesium.JulianDate.addSeconds(start, i*1, new Cesium.JulianDate());
+				}
+				function computeCirclularFlight() {//将坐标点以及time添加成集合
+                    var property = new Cesium.SampledPositionProperty();
+                    property.addSamples(myTime, myPosition);
+                    return property;
+                }
+				pathMethod(computeCirclularFlight());
+			})
+		}
+		function pathMethod(myPosition){
+			viewer.entities.add({
+	            availability : new Cesium.TimeIntervalCollection([new Cesium.TimeInterval({
+	                start : start,
+	                stop : stop
+	            })]),
+	            position : myPosition,
+	            orientation : new Cesium.VelocityOrientationProperty(myPosition),
+	            model : {
+	                uri : "js/Assets/Textures/maki/Cesium_Air.gltf",
+	                minimumPixelSize : 30,
+	            },
+	            path : {
+	                material:Cesium.Color.YELLOW.withAlpha(1)
+	            }
+	        }); 
+		}
+	}
+	
+	
+
+    
+}) 
 </script>
 </head>
 <body>
 	<div id="map">
 		<div id="cesiumContainer" class="fullSize"></div>
 	</div>
-	<button id="btn1">hahahah1</button>
-	<button id="btn2">hahahah2</button>
 </body>
 </html>
